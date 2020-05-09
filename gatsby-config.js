@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Personal Blog`,
+    title: `Inferno's Blog`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -10,10 +10,24 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+      },
+    },
+    `gatsby-plugin-feed-mdx`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
