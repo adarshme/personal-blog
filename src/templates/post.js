@@ -1,13 +1,18 @@
 import React from "react"
-import Helmet from "react-helmet"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { graphql } from "gatsby"
+import Header from "../components/header"
+import "../css/markdown.css"
 
 export default function Template({ data }) {
   const { mdx: post } = data
   return (
-    <div>
-      <h1>{post.frontmatter.title}</h1>
-      <MDXRenderer>{post.body}</MDXRenderer>
+    <div className="markdown-container">
+      <Header siteTitle="Inferno's Blog" />
+      <div className="markdown markdown-content">
+        <h1>{post.frontmatter.title}</h1>
+        <MDXRenderer>{post.body}</MDXRenderer>
+      </div>
     </div>
   )
 }
