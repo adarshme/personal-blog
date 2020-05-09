@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
+        className="container-box"
         style={{
           margin: `0 auto`,
           maxWidth: 960,
@@ -35,11 +36,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <footer className="footer">Footer</footer>
       </div>
     </>
   )
