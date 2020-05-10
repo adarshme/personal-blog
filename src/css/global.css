@@ -4,23 +4,45 @@
 
 @tailwind utilities;
 
-a {
+/* a {
   @apply text-blue-500;
 }
 
 a:hover {
   @apply text-blue-600 underline;
+} */
+
+.site-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "blogs blogs blogs"
+    "footer footer footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.site-container > Header {
+  grid-area: header;
+  justify-self: stretch;
+  align-self: stretch;
 }
 
 .container-box {
+  grid-area: blogs;
+  width: 100vw;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.latestBlogPosts {
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
-  height: 100vh;
+  grid-template-columns: 1fr;
 }
 
 .footer {
-  grid-column: 1 / -1;
-  align-self: end;
+  grid-area: footer;
+  justify-self: center;
 }
 
 .markdown-container {
