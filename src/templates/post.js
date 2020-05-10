@@ -11,8 +11,11 @@ export default function Template({ data }) {
   return (
     <div className="markdown-container bg-gray-100">
       <Header siteTitle="Inferno's Blog" />
-      <div className="markdown markdown-content">
-        <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
+      <Img
+        className="cover-image"
+        fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+      />
+      <div className="markdown markdown-content bg-white mt-2">
         <h1>{post.frontmatter.title}</h1>
         <h6>{parseDate(post.frontmatter.date)}</h6>
         <MDXRenderer>{post.body}</MDXRenderer>
