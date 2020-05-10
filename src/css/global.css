@@ -12,6 +12,10 @@ a:hover {
   @apply text-blue-600 underline;
 } */
 
+body {
+  font-family: inter;
+}
+
 .site-container {
   display: grid;
   grid-template-areas:
@@ -40,6 +44,10 @@ a:hover {
   grid-template-columns: 1fr;
 }
 
+.blog-thumbnail {
+  min-width: 250px;
+}
+
 .footer {
   grid-area: footer;
   justify-self: center;
@@ -50,6 +58,7 @@ a:hover {
   grid-template-columns: 1fr 800px 1fr;
   grid-template-areas:
     "header header header"
+    "cover cover cover"
     "sidebar1 content sidebar2";
 }
 
@@ -59,10 +68,29 @@ a:hover {
   align-self: stretch;
 }
 
+.cover-image {
+  grid-area: cover;
+  max-width: 900px;
+  width: 100vw;
+  justify-self: center;
+}
+
 .markdown-content {
   grid-area: content;
   padding-left: 50px;
   padding-right: 50px;
+}
+
+@media (min-width: 900px) {
+  .cover-image {
+    @apply rounded-lg;
+    @apply overflow-hidden;
+  }
+  .markdown-content {
+    @apply rounded-lg;
+    @apply overflow-hidden;
+    @apply shadow-lg;
+  }
 }
 
 @media (max-width: 800px) {
@@ -72,6 +100,15 @@ a:hover {
   .markdown-content {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .blog-thumbnail {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-thumbnail {
+    min-width: 150px;
   }
 }
 

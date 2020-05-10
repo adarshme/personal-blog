@@ -5,9 +5,9 @@ import { parseDate } from "../helpers"
 
 const Card = props => {
   return (
-    <div className="bg-white border mt-1 mb-1 mr-2 rounded-lg overflow-hidden">
+    <div className="bg-white border mt-1 mb-1 mr-2 rounded-lg overflow-hidden shadow">
       <Link to={props.to} style={{ display: "flex", flexDirection: "row" }}>
-        <Img fluid={props.image} style={{ width: "250px" }} />
+        <Img className="blog-thumbnail" fluid={props.image} />
         <div
           className="p-6"
           style={{
