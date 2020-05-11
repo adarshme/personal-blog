@@ -8,7 +8,7 @@ import Card from "../components/card"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
-    <div className="latestBlogPosts antialiased">
+    <div className="latestBlogPosts">
       {data.allMdx.edges.map(post => (
         <Card
           key={post.node.id}

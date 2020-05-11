@@ -1,8 +1,10 @@
 module.exports = {
+  // pathPrefix: `/blog`,
   siteMetadata: {
     title: `Inferno's Blog`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    siteUrl: `https://infernocoder11.github.io/blog`,
+    description: `Blazing fast personal blog site created using GatsbyJS and Tailwind CSS.`,
+    author: `Adarsh Menon`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,7 +29,7 @@ module.exports = {
         extensions: [`.mdx`, `.md`],
       },
     },
-    `gatsby-plugin-feed-mdx`,
+    // `gatsby-plugin-feed-mdx`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
