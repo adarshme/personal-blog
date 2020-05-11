@@ -9,7 +9,7 @@ const Card = props => {
       <Link to={props.to} style={{ display: "flex", flexDirection: "row" }}>
         <Img className="blog-thumbnail" fluid={props.image} />
         <div
-          className="p-6"
+          className="card-text"
           style={{
             display: "flex",
             flexDirection: "column",
