@@ -1,7 +1,9 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
+import SEO from "../components/seo"
 import Header from "../components/header"
+import Footer from "../components/footer"
 import "../css/markdown.css"
 import Img from "gatsby-image"
 import { parseDate } from "../helpers"
@@ -9,18 +11,22 @@ import { parseDate } from "../helpers"
 export default function Template({ data }) {
   const { mdx: post } = data
   return (
-    <div className="markdown-container bg-gray-100">
-      <Header siteTitle="Inferno's Blog" />
-      <Img
-        className="cover-image"
-        fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-      />
-      <div className="markdown markdown-content bg-white mt-2">
-        <h1>{post.frontmatter.title}</h1>
-        <h6>{parseDate(post.frontmatter.date)}</h6>
-        <MDXRenderer>{post.body}</MDXRenderer>
+    <>
+      <SEO title={post.frontmatter.title} />
+      <div className="markdown-container bg-gray-100">
+        <Header siteTitle="Inferno's Blog" />
+        <Img
+          className="cover-image"
+          fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
+        />
+        <div className="markdown markdown-content bg-white mt-2 mb-2">
+          <h1>{post.frontmatter.title}</h1>
+          <h6>{parseDate(post.frontmatter.date)}</h6>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
+        <Footer />
       </div>
-    </div>
+    </>
   )
 }
 
