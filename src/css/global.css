@@ -1,16 +1,115 @@
-/* @tailwind preflight; */
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
 
-a {
+/* a {
   @apply text-blue-500;
 }
 
 a:hover {
   @apply text-blue-600 underline;
+} */
+
+body {
+  font-family: inter;
+}
+
+.site-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "blogs blogs blogs"
+    "footer footer footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+.site-container > Header {
+  grid-area: header;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.container-box {
+  grid-area: blogs;
+  width: 100vw;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.latestBlogPosts {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.blog-thumbnail {
+  min-width: 250px;
+}
+
+.footer {
+  grid-area: footer;
+  justify-self: center;
+}
+
+.markdown-container {
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  grid-template-areas:
+    "header header header"
+    "cover cover cover"
+    "sidebar1 content sidebar2";
+}
+
+.markdown-container > Header {
+  grid-area: header;
+  justify-self: stretch;
+  align-self: stretch;
+}
+
+.cover-image {
+  grid-area: cover;
+  max-width: 900px;
+  width: 100vw;
+  justify-self: center;
+}
+
+.markdown-content {
+  grid-area: content;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+@media (min-width: 900px) {
+  .cover-image {
+    @apply rounded-lg;
+    @apply overflow-hidden;
+  }
+  .markdown-content {
+    @apply rounded-lg;
+    @apply overflow-hidden;
+    @apply shadow-lg;
+  }
+}
+
+@media (max-width: 800px) {
+  .markdown-container {
+    grid-template-columns: 0 1fr 0;
+  }
+  .markdown-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .blog-thumbnail {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .blog-thumbnail {
+    min-width: 150px;
+  }
 }
 
 /* a {
