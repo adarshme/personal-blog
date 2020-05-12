@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
           key={post.node.id}
           to={post.node.frontmatter.path}
           title={post.node.frontmatter.title}
-          image={post.node.frontmatter.featuredImage.childImageSharp.fluid}
+          image={post.node.frontmatter.thumbnail.childImageSharp.fluid}
           date={post.node.frontmatter.date}
         />
       ))}
@@ -36,9 +36,9 @@ export const pageQuery = graphql`
             path
             title
             date
-            featuredImage {
+            thumbnail {
               childImageSharp {
-                fluid(maxWidth: 250, quality: 100) {
+                fluid(maxWidth: 250, quality: 80) {
                   ...GatsbyImageSharpFluid
                 }
               }
