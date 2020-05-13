@@ -13,13 +13,13 @@ export default function Template({ data }) {
   return (
     <>
       <SEO title={post.frontmatter.title} />
-      <div className="markdown-container bg-gray-100">
+      <div className="markdown-container">
         <Header siteTitle="Inferno's Blog" />
         <Img
           className="cover-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
         />
-        <div className="markdown markdown-content bg-white mt-2 mb-2">
+        <div className="markdown markdown-content mt-2 mb-2">
           <h1>{post.frontmatter.title}</h1>
           <h6>{parseDate(post.frontmatter.date)}</h6>
           <MDXRenderer>{post.body}</MDXRenderer>
