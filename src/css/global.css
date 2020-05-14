@@ -12,6 +12,28 @@ a:hover {
   @apply text-blue-600 underline;
 } */
 
+:root {
+  --clr-primary: #ffffff;
+  --clr-secondary: #f7fafc;
+  --clr-border: #dde0e2;
+  --text-primary: #000000;
+  --text-secondary: #4a5568;
+  --heart-color: #e53e3e;
+  --dark-mode-status-svg: url("../images/moon.svg");
+  --header-bg-color: #663399;
+}
+
+.dark-mode {
+  --clr-primary: #333333;
+  --clr-secondary: #212121;
+  --clr-border: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #e2e8f0;
+  --heart-color: #e53e3e;
+  --dark-mode-status-svg: url("../images/sun.svg");
+  --header-bg-color: #333333;
+}
+
 body {
   font-family: inter;
 }
@@ -24,13 +46,32 @@ body {
     "footer footer footer";
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  background: var(--clr-secondary);
 }
 
-.site-container > Header {
+.site-header {
   grid-area: header;
   justify-self: stretch;
   align-self: stretch;
+  background: var(--header-bg-color);
+  border-color: var(--clr-border);
+  @apply shadow-lg;
 }
+
+.dark-mode-toggle-button {
+  background-image: var(--dark-mode-status-svg);
+  height: 30px;
+  width: 30px;
+  overflow: visible;
+  border: none;
+}
+
+/* .dark-mode-toggle-button.sun {
+  background-image: var(--dark-mode-status-svg);
+  height: 30px;
+  width: 30px;
+  overflow: visible;
+} */
 
 .container-box {
   grid-area: blogs;
@@ -49,6 +90,19 @@ body {
   min-width: 250px;
 }
 
+.card-class {
+  background-color: var(--clr-primary);
+  border-color: var(--clr-border);
+}
+
+.card-title {
+  color: var(--text-primary);
+}
+
+.card-date {
+  color: var(--text-secondary);
+}
+
 .card-text {
   padding-left: 20px;
   padding-right: 20px;
@@ -57,6 +111,11 @@ body {
 .footer {
   grid-area: footer;
   justify-self: center;
+  color: var(--text-primary);
+}
+
+.heart {
+  color: var(--heart-color);
 }
 
 .markdown-container {
@@ -67,13 +126,14 @@ body {
     "cover cover cover"
     "sidebar1 content sidebar2"
     "footer footer footer";
+  background-color: var(--clr-secondary);
 }
 
-.markdown-container > Header {
+/* .markdown-container > Header {
   grid-area: header;
   justify-self: stretch;
   align-self: stretch;
-}
+} */
 
 .cover-image {
   grid-area: cover;
@@ -86,6 +146,7 @@ body {
   grid-area: content;
   padding-left: 50px;
   padding-right: 50px;
+  background-color: var(--clr-primary);
   @apply rounded-lg;
   @apply overflow-hidden;
   @apply shadow-lg;

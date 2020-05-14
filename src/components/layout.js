@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="site-container bg-gray-100 antialiased">
+      <div id="site-container" className="site-container antialiased">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           className="container-box"

@@ -5,7 +5,7 @@ import { parseDate } from "../helpers"
 
 const Card = props => {
   return (
-    <div className="bg-white border mt-1 mb-1 mr-2 rounded-lg overflow-hidden shadow">
+    <div className="card-class border mt-1 mb-1 mr-2 rounded-lg overflow-hidden shadow">
       <Link to={props.to} style={{ display: "flex", flexDirection: "row" }}>
         <Img className="blog-thumbnail" fluid={props.image} />
         <div
@@ -16,8 +16,8 @@ const Card = props => {
             alignSelf: "center",
           }}
         >
-          <h4 className="font-semibold text-xl">{props.title}</h4>
-          <h6 className="text-gray-700">{parseDate(props.date)}</h6>
+          <h4 className="card-title font-semibold text-xl">{props.title}</h4>
+          <h6 className="card-date">{parseDate(props.date)}</h6>
         </div>
       </Link>
     </div>

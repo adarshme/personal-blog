@@ -35,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Inferno's Blog`,
+        short_name: `Inferno's Blog`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -53,6 +53,16 @@ module.exports = {
         // whitelist: ['whitelist'], // Don't remove this selector
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
+    {
+      resolve: "gatsby-plugin-use-dark-mode",
+      options: {
+        classNameDark: "dark-mode",
+        // classNameLight: 'light-mode',
+        storageKey: "dark-mode",
+        // element: document,
+        minify: true,
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

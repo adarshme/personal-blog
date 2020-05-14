@@ -20,3 +20,16 @@ export function parseDate(date) {
   let day = Number(date[2])
   return month + " " + day + " " + year
 }
+
+export function toggleDarkMode() {
+  const body = document.body
+  // const toggleButton = document.getElementById("dark-mode-toggle-button")
+  body.classList.toggle("dark-mode")
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("dark-mode", true)
+    // toggleButton.classList.add("sun")
+  } else {
+    localStorage.setItem("dark-mode", false)
+    // toggleButton.classList.remove("sun")
+  }
+}
