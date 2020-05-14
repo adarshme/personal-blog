@@ -20,16 +20,18 @@ a:hover {
   --text-secondary: #4a5568;
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/moon.svg");
+  --header-bg-color: #663399;
 }
 
 .dark-mode {
-  --clr-primary: #1e1e1e;
-  --clr-secondary: #121212;
+  --clr-primary: #333333;
+  --clr-secondary: #212121;
   --clr-border: #000000;
   --text-primary: #ffffff;
   --text-secondary: #e2e8f0;
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/sun.svg");
+  --header-bg-color: #333333;
 }
 
 body {
@@ -47,10 +49,13 @@ body {
   background: var(--clr-secondary);
 }
 
-.site-container > Header {
+.site-header {
   grid-area: header;
   justify-self: stretch;
   align-self: stretch;
+  background: var(--header-bg-color);
+  border-color: var(--clr-border);
+  @apply shadow-lg;
 }
 
 .dark-mode-toggle-button {
@@ -58,6 +63,7 @@ body {
   height: 30px;
   width: 30px;
   overflow: visible;
+  border: none;
 }
 
 /* .dark-mode-toggle-button.sun {
@@ -123,11 +129,11 @@ body {
   background-color: var(--clr-secondary);
 }
 
-.markdown-container > Header {
+/* .markdown-container > Header {
   grid-area: header;
   justify-self: stretch;
   align-self: stretch;
-}
+} */
 
 .cover-image {
   grid-area: cover;
