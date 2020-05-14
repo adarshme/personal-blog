@@ -19,7 +19,7 @@ export default function Template({ data }) {
           className="cover-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
         />
-        <div className="markdown markdown-content mt-2 mb-2">
+        <div className="markdown markdown-content mt-4 mb-2">
           <h1>{post.frontmatter.title}</h1>
           <h6>{parseDate(post.frontmatter.date)}</h6>
           <MDXRenderer>{post.body}</MDXRenderer>
