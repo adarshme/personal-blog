@@ -198,6 +198,10 @@ body {
   .card-date {
     font-size: 0.9rem;
   }
+  .markdown-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 /* a {
