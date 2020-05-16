@@ -24,8 +24,7 @@ export function parseDate(date) {
 export function toggleDarkMode() {
   const body = document.body
   // const toggleButton = document.getElementById("dark-mode-toggle-button")
-  body.classList.toggle("dark-mode")
-  if (body.classList.contains("dark-mode")) {
+  if (body.classList.toggle("dark-mode")) {
     localStorage.setItem("dark-mode", true)
     // toggleButton.classList.add("sun")
   } else {
