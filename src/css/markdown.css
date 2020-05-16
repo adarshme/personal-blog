@@ -92,6 +92,7 @@
 
 .markdown pre {
   background-color: var(--bg-gray-100);
+  overflow: auto;
   @apply rounded p-4;
 }
 
