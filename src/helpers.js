@@ -32,3 +32,15 @@ export function toggleDarkMode() {
     // toggleButton.classList.remove("sun")
   }
 }
+
+var posY = 0
+window.addEventListener("scroll", event => {
+  const header = document.getElementById("site-header")
+  if (window.scrollY - posY > 76) {
+    header.classList.add("hide")
+    posY = window.scrollY
+  } else if (window.scrollY - posY < 0) {
+    header.classList.remove("hide")
+    posY = window.scrollY
+  }
+})
