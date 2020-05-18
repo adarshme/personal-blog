@@ -13,8 +13,8 @@ export default function Template({ data }) {
   return (
     <>
       <SEO title={post.frontmatter.title} />
+      <Header siteTitle="Inferno's Blog" />
       <div className="markdown-container">
-        <Header siteTitle="Inferno's Blog" />
         <Img
           className="cover-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}

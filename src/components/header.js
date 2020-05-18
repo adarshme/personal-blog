@@ -6,6 +6,7 @@ import { toggleDarkMode } from "../helpers"
 const Header = ({ siteTitle }) => (
   <header
     className="site-header"
+    id="site-header"
     style={{
       marginBottom: `16px`,
     }}

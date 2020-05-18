@@ -23,12 +23,23 @@ export function parseDate(date) {
 
 export function toggleDarkMode() {
   const body = document.body
-  // const toggleButton = document.getElementById("dark-mode-toggle-button")
   if (body.classList.toggle("dark-mode")) {
     localStorage.setItem("dark-mode", true)
-    // toggleButton.classList.add("sun")
   } else {
     localStorage.setItem("dark-mode", false)
-    // toggleButton.classList.remove("sun")
   }
 }
+
+// if (typeof window !== `undefined`) {
+//   var posY = 0
+//   const header = document.getElementById("site-header")
+//   window.addEventListener("scroll", event => {
+//     if (window.scrollY - posY > 76) {
+//       header.classList.add("hide")
+//       posY = window.scrollY
+//     } else if (window.scrollY - posY < 0) {
+//       header.classList.remove("hide")
+//       posY = window.scrollY
+//     }
+//   })
+// }

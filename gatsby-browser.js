@@ -6,17 +6,30 @@
 
 // You can delete this file if you're not using it
 
-// export const onClientEntry = () => {
-//   const dark = localStorage.getItem("dark-mode")
-//   if (dark && dark === "true") {
-//     document.document.body.classList.add("dark-mode")
-//   }
+// export const onInitialClientRender = () => {
+//   var posY = 0
+//   const header = document.getElementById("site-header")
+//   window.addEventListener("scroll", event => {
+//     if (window.scrollY - posY > 76) {
+//       header.classList.add("hide")
+//       posY = window.scrollY
+//     } else if (window.scrollY - posY < 0) {
+//       header.classList.remove("hide")
+//       posY = window.scrollY
+//     }
+//   })
 // }
 
-// export const onRouteUpdate = () => {
-//   const dark = localStorage.getItem("dark-mode")
-//   if (dark && dark === "true") {
-//     document.document.body.classList.add("dark-mode")
-//     document.getElementById("dark-mode-toggle-button").classList.add("sun")
-//   }
-// }
+export const onRouteUpdate = () => {
+  var posY = 0
+  const header = document.getElementById("site-header")
+  window.addEventListener("scroll", event => {
+    if (window.scrollY - posY > 76) {
+      header.classList.add("hide")
+      posY = window.scrollY
+    } else if (window.scrollY - posY < 0) {
+      header.classList.remove("hide")
+      posY = window.scrollY
+    }
+  })
+}
