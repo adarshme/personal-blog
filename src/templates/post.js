@@ -9,11 +9,16 @@ import Img from "gatsby-image"
 import { parseDate } from "../helpers"
 
 export default function Template({ data }) {
-  const { mdx: post } = data
+  const {
+    mdx: post,
+    site: {
+      siteMetadata: { title },
+    },
+  } = data
   return (
     <>
       <SEO title={post.frontmatter.title} />
-      <Header siteTitle="Inferno's Blog" />
+      <Header siteTitle={title} />
       <div className="markdown-container">
         <Img
           className="cover-image"
@@ -32,6 +37,11 @@ export default function Template({ data }) {
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     mdx(frontmatter: { path: { eq: $path } }) {
       body
       frontmatter {
