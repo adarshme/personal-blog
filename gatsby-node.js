@@ -12,10 +12,11 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const postTemplate = path.resolve("src/templates/post.js")
+  const tagTemplate = path.resolve("src/templates/tags.js")
 
   return graphql(`
     {
-      allMdx {
+      posts: allMdx {
         edges {
           node {
             body
@@ -28,15 +29,29 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      tagsGroup: allMdx(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
     }
   `).then(res => {
     if (res.errors) {
       return Promise.reject(res.errors)
     }
-    res.data.allMdx.edges.forEach(({ node }) => {
+    res.data.posts.edges.forEach(({ node }) => {
       createPage({
         path: `${node.frontmatter.path}`,
         component: postTemplate,
+      })
+    })
+    res.data.tagsGroup.group.forEach(tag => {
+      createPage({
+        path: `/tags/${tag.fieldValue}/`,
+        component: tagTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
       })
     })
   })
