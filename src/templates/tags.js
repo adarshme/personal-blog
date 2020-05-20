@@ -1,9 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
+import SEO from "../components/seo"
 
 // Components
 import { Link, graphql } from "gatsby"
 import Card from "../components/card"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
@@ -13,27 +16,37 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <div>
-      <h1>{tagHeader}</h1>
-      <ul>
-        {edges.map(({ node }) => {
-          return (
-            <Card
-              key={node.id}
-              to={node.frontmatter.path}
-              title={node.frontmatter.title}
-              image={node.frontmatter.thumbnail.childImageSharp.fluid}
-              date={node.frontmatter.date}
-            />
-          )
-        })}
-      </ul>
-      {/*
-              This links to a page that does not yet exist.
-              You'll come back to it!
-            */}
-      <Link to="/tags">All tags</Link>
-    </div>
+    <>
+      <SEO title={`Tag - ${tag}`} />
+      <div className="tag-blogs-container">
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div
+          className="container-box"
+          style={{
+            margin: `0 auto`,
+            maxWidth: 960,
+            // padding: `0 1.0875rem 1.45rem`,
+          }}
+        >
+          <div className="latestBlogPosts">
+            {edges.map(({ node }) => {
+              return (
+                <Card
+                  key={node.id}
+                  to={node.frontmatter.path}
+                  title={node.frontmatter.title}
+                  image={node.frontmatter.thumbnail.childImageSharp.fluid}
+                  date={node.frontmatter.date}
+                />
+              )
+            })}
+          </div>
+        </div>
+        {/* <h1>{tagHeader}</h1>
+        <Link to="/tags">All tags</Link> */}
+        <Footer />
+      </div>
+    </>
   )
 }
 
@@ -62,6 +75,11 @@ export default Tags
 
 export const pageQuery = graphql`
   query($tag: String) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
