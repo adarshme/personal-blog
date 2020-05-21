@@ -21,6 +21,7 @@ a:hover {
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/moon.svg");
   --header-bg-color: #663399;
+  --text-blue-600: #3182ce;
 }
 
 .dark-mode {
@@ -32,6 +33,7 @@ a:hover {
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/sun.svg");
   --header-bg-color: #333333;
+  --text-blue-600: #0081cb;
 }
 
 body {
@@ -40,6 +42,15 @@ body {
 
 #gatsby-focus-wrapper {
   background-color: var(--clr-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.link {
+  color: var(--text-blue-600);
+  @apply font-semibold;
 }
 
 .site-container {
@@ -179,10 +190,21 @@ body {
   grid-template-areas:
     "header header header"
     "blogs blogs blogs"
+    "info info info"
     "footer footer footer";
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
   min-height: 100vh;
   background: var(--clr-secondary);
+}
+
+.info-nav {
+  grid-area: info;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 16px;
+  gap: 20px;
 }
 
 .tags-container {
@@ -258,6 +280,12 @@ body {
 
   .card-text {
     padding: 5px;
+  }
+
+  .info-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
 }
 
