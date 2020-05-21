@@ -1,12 +1,12 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../css/markdown.css"
 import Img from "gatsby-image"
-import { parseDate } from "../helpers"
+import { parseDate, goBack } from "../helpers"
 
 export default function Template({ data }) {
   const {
@@ -28,6 +28,14 @@ export default function Template({ data }) {
           <h1>{post.frontmatter.title}</h1>
           <h6>{parseDate(post.frontmatter.date)}</h6>
           <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
+        <div className="info-nav in-row text-primary mb-2">
+          <Link to="/" className="link">
+            Home
+          </Link>
+          <Link to="/tags/" className="link">
+            All tags
+          </Link>
         </div>
         <Footer />
       </div>
