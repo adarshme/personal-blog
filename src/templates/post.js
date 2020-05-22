@@ -6,7 +6,7 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../css/markdown.css"
 import Img from "gatsby-image"
-import { parseDate, goBack } from "../helpers"
+import { parseDate } from "../helpers"
 
 export default function Template({ data, pageContext }) {
   const {
