@@ -27,6 +27,11 @@ const TagsPage = ({
             </li>
           ))}
         </ul>
+        <div className="info-nav">
+          <Link to="/" className="link">
+            Home
+          </Link>
+        </div>
         <Footer />
       </div>
     </div>
