@@ -31,19 +31,19 @@ export default function Template({ data, pageContext }) {
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
         <div className="info-nav in-row text-primary mb-2">
-          {prev && (
-            <Link to={prev.frontmatter.path} className="link">
+          {next && (
+            <Link to={next.frontmatter.path} className="link">
               Previous
             </Link>
           )}
-          <Link to="/" className="link">
-            Home
-          </Link>
           <Link to="/tags/" className="link">
             All tags
           </Link>
-          {next && (
-            <Link to={next.frontmatter.path} className="link">
+          <Link to="/" className="link">
+            Home
+          </Link>
+          {prev && (
+            <Link to={prev.frontmatter.path} className="link">
               Next
             </Link>
           )}
