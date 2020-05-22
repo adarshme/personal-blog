@@ -48,6 +48,10 @@ body {
   color: var(--text-primary);
 }
 
+a {
+  @apply outline-none;
+}
+
 .link {
   color: var(--text-blue);
   @apply font-semibold;
