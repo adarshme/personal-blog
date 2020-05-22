@@ -8,13 +8,14 @@ import "../css/markdown.css"
 import Img from "gatsby-image"
 import { parseDate, goBack } from "../helpers"
 
-export default function Template({ data }) {
+export default function Template({ data, pageContext }) {
   const {
     mdx: post,
     site: {
       siteMetadata: { title },
     },
   } = data
+  const { next, prev } = pageContext
   return (
     <>
       <SEO title={post.frontmatter.title} />
@@ -30,12 +31,22 @@ export default function Template({ data }) {
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
         <div className="info-nav in-row text-primary mb-2">
+          {prev && (
+            <Link to={prev.frontmatter.path} className="link">
+              Previous
+            </Link>
+          )}
           <Link to="/" className="link">
             Home
           </Link>
           <Link to="/tags/" className="link">
             All tags
           </Link>
+          {next && (
+            <Link to={next.frontmatter.path} className="link">
+              Next
+            </Link>
+          )}
         </div>
         <Footer />
       </div>
