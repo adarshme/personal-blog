@@ -16,7 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      posts: allMdx {
+      posts: allMdx(sort: { order: ASC, fields: [frontmatter___date] }) {
         edges {
           node {
             body
@@ -39,10 +39,15 @@ exports.createPages = ({ actions, graphql }) => {
     if (res.errors) {
       return Promise.reject(res.errors)
     }
-    res.data.posts.edges.forEach(({ node }) => {
+    const posts = res.data.posts.edges
+    posts.forEach(({ node }, index) => {
       createPage({
         path: `${node.frontmatter.path}`,
         component: postTemplate,
+        context: {
+          prev: index === 0 ? null : posts[index - 1].node,
+          next: index === posts.length - 1 ? null : posts[index + 1].node,
+        },
       })
     })
     res.data.tagsGroup.group.forEach(tag => {
