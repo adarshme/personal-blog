@@ -22,9 +22,13 @@ const TagsPage = ({
       <div className="tags-container">
         <ul className="tags-list">
           {group.map(tag => (
-            <li key={tag.fieldValue} className="tag rounded-full p-1">
-              <Link to={`/tags/${tag.fieldValue}/`}>{tag.fieldValue}</Link>
-            </li>
+            <Link
+              to={`/tags/${tag.fieldValue}/`}
+              key={tag.fieldValue}
+              className="tag rounded-full p-1"
+            >
+              {tag.fieldValue}
+            </Link>
           ))}
         </ul>
         <Footer />
