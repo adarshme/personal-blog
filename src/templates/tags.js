@@ -44,7 +44,10 @@ const Tags = ({ pageContext, data }) => {
         </div>
         <div className="info-nav text-primary">
           <h1>{tagHeader}</h1>
-          <Link to="/tags" className="link">
+          <Link to="/" className="link">
+            Home
+          </Link>
+          <Link to="/tags/" className="link">
             All tags
           </Link>
         </div>
