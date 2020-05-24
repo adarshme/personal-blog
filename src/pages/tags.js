@@ -31,7 +31,7 @@ const TagsPage = ({
             </Link>
           ))}
         </ul>
-        <div className="info-nav">
+        <div className="info-nav padding-top-6px">
           <Link to="/" className="link">
             Home
           </Link>

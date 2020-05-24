@@ -216,6 +216,10 @@ a {
   gap: 20px;
 }
 
+.padding-top-6px {
+  padding-top: 6px;
+}
+
 .tags-container {
   position: relative;
   top: 76px;
@@ -239,13 +243,15 @@ a {
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
-  gap: 10px;
+  justify-content: center;
 }
 
 .tag {
   background-color: var(--clr-primary);
   color: var(--text-primary);
   overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .tag:hover {
