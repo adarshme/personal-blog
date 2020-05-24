@@ -9,7 +9,7 @@
 }
 
 a:hover {
-  @apply text-blue-600 underline;
+  @apply text-blue underline;
 } */
 
 :root {
@@ -21,6 +21,7 @@ a:hover {
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/moon.svg");
   --header-bg-color: #663399;
+  --text-blue: #3182ce;
 }
 
 .dark-mode {
@@ -32,6 +33,7 @@ a:hover {
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/sun.svg");
   --header-bg-color: #333333;
+  --text-blue: #0081cb;
 }
 
 body {
@@ -40,6 +42,23 @@ body {
 
 #gatsby-focus-wrapper {
   background-color: var(--clr-secondary);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+a {
+  @apply outline-none;
+}
+
+.link {
+  color: var(--text-blue);
+  @apply font-semibold;
+}
+
+.link:hover {
+  @apply underline;
 }
 
 .site-container {
@@ -146,6 +165,7 @@ body {
     "header header header"
     "cover cover cover"
     "sidebar1 content sidebar2"
+    "info-nav info-nav info-nav"
     "footer footer footer";
   background-color: var(--clr-secondary);
 }
@@ -172,6 +192,70 @@ body {
   @apply rounded-lg;
   @apply overflow-hidden;
   @apply shadow-lg;
+}
+
+.tag-blogs-container {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "blogs blogs blogs"
+    "info-nav info-nav info-nav"
+    "footer footer footer";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  background: var(--clr-secondary);
+}
+
+.info-nav {
+  grid-area: info-nav;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 16px;
+  gap: 20px;
+}
+
+.tags-container {
+  position: relative;
+  top: 76px;
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: 1fr 900px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "sidebar-1 content sidebar-2"
+    "info-nav info-nav info-nav"
+    "footer footer footer";
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: var(--clr-secondary);
+}
+
+.tags-list {
+  grid-area: content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+}
+
+.tag {
+  background-color: var(--clr-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+.tag:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 940px) {
+  .tags-container {
+    grid-template-columns: 0 1fr 0;
+  }
 }
 
 @media (min-width: 900px) {
@@ -206,6 +290,19 @@ body {
 
   .card-text {
     padding: 5px;
+  }
+
+  .info-nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+  }
+
+  .in-row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
   }
 }
 

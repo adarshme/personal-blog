@@ -30,6 +30,10 @@ export function toggleDarkMode() {
   }
 }
 
+export function goBack() {
+  window.history.back()
+}
+
 // if (typeof window !== `undefined`) {
 //   var posY = 0
 //   const header = document.getElementById("site-header")

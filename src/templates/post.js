@@ -1,6 +1,6 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import SEO from "../components/seo"
 import Header from "../components/header"
 import Footer from "../components/footer"
@@ -8,12 +8,18 @@ import "../css/markdown.css"
 import Img from "gatsby-image"
 import { parseDate } from "../helpers"
 
-export default function Template({ data }) {
-  const { mdx: post } = data
+export default function Template({ data, pageContext }) {
+  const {
+    mdx: post,
+    site: {
+      siteMetadata: { title },
+    },
+  } = data
+  const { next, prev } = pageContext
   return (
     <>
       <SEO title={post.frontmatter.title} />
-      <Header siteTitle="Inferno's Blog" />
+      <Header siteTitle={title} />
       <div className="markdown-container">
         <Img
           className="cover-image"
@@ -24,6 +30,24 @@ export default function Template({ data }) {
           <h6>{parseDate(post.frontmatter.date)}</h6>
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
+        <div className="info-nav in-row text-primary mb-2">
+          {next && (
+            <Link to={next.frontmatter.path} className="link">
+              Previous
+            </Link>
+          )}
+          <Link to="/tags/" className="link">
+            All tags
+          </Link>
+          <Link to="/" className="link">
+            Home
+          </Link>
+          {prev && (
+            <Link to={prev.frontmatter.path} className="link">
+              Next
+            </Link>
+          )}
+        </div>
         <Footer />
       </div>
     </>
@@ -32,6 +56,11 @@ export default function Template({ data }) {
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     mdx(frontmatter: { path: { eq: $path } }) {
       body
       frontmatter {

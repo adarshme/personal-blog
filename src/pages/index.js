@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/layout"
 //import Image from "../components/image"
 import SEO from "../components/seo"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import Card from "../components/card"
 
 const IndexPage = ({ data }) => (
@@ -18,6 +18,11 @@ const IndexPage = ({ data }) => (
           date={post.node.frontmatter.date}
         />
       ))}
+    </div>
+    <div className="info-nav text-primary">
+      <Link to="/tags" className="link">
+        All tags
+      </Link>
     </div>
   </Layout>
 )
