@@ -10,7 +10,17 @@ const NotFoundPage = () => (
     <div class="container-404 text-primary">
       <div className="content-404 markdown">
         <h1>NOT FOUND</h1>
-        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+        <h2>You just hit a route that doesn&#39;t exist... the sadness.</h2>
+        <h4>
+          If there should be a page here, let me know by opening an issue at
+          this project's{" "}
+          <a
+            className="link"
+            href="https://github.com/InfernoCoder11/personal-blog"
+          >
+            github repo
+          </a>
+        </h4>
       </div>
       <div className="info-nav in-row">
         <Link to="/" className="link">
