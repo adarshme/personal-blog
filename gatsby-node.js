@@ -32,7 +32,10 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      tagsGroup: allMdx(limit: 2000) {
+      tagsGroup: allMdx(
+        limit: 2000
+        filter: { frontmatter: { published: { eq: true } } }
+      ) {
         group(field: frontmatter___tags) {
           fieldValue
         }
