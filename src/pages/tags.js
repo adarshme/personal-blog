@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import "../css/global.css"
+
 const TagsPage = ({
   data: {
     allMdx: { group },
