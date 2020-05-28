@@ -106,6 +106,24 @@ a {
   overflow: visible;
 } */
 
+.container-404 {
+  display: grid;
+  grid-template-areas:
+    "content"
+    "info-nav";
+  justify-items: center;
+  margin-top: 92px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.content-404 {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .container-box {
   grid-area: blogs;
   width: 100vw;
@@ -213,7 +231,15 @@ a {
   justify-content: center;
   align-items: flex-start;
   padding-top: 16px;
-  gap: 20px;
+}
+
+.info-nav > * {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.padding-top-6px {
+  padding-top: 6px;
 }
 
 .tags-container {
@@ -239,13 +265,15 @@ a {
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: flex-start;
-  gap: 10px;
+  justify-content: center;
 }
 
 .tag {
   background-color: var(--clr-primary);
   color: var(--text-primary);
   overflow: hidden;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .tag.mark {
@@ -300,13 +328,21 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 5px;
+  }
+
+  .info-nav > * {
+    margin-left: 3px;
+    margin-right: 3px;
   }
 
   .in-row {
     flex-direction: row;
     justify-content: center;
-    gap: 20px;
+  }
+
+  .info-nav.in-row > * {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 

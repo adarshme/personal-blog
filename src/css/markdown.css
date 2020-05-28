@@ -50,6 +50,10 @@
   @apply font-semibold;
 }
 
+.markdown a:hover {
+  @apply underline;
+}
+
 .markdown strong a {
   @apply font-bold;
 }

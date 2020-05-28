@@ -7,6 +7,8 @@ import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
+import "../css/global.css"
+
 const TagsPage = ({
   data: {
     allMdx: { group },
@@ -31,7 +33,7 @@ const TagsPage = ({
             </Link>
           ))}
         </ul>
-        <div className="info-nav">
+        <div className="info-nav padding-top-6px">
           <Link to="/" className="link">
             Home
           </Link>
@@ -66,7 +68,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(limit: 2000) {
+    allMdx(limit: 2000, filter: { frontmatter: { published: { eq: true } } }) {
       group(field: frontmatter___tags) {
         fieldValue
         totalCount

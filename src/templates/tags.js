@@ -8,6 +8,8 @@ import Card from "../components/card"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
+import "../css/global.css"
+
 const Tags = ({ pageContext, data }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMdx
