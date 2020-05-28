@@ -25,23 +25,21 @@ export default function Template({ data, pageContext }) {
           className="cover-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
         />
-        <div className="markdown-content mt-4 mb-2">
-          <div className="markdown">
-            <h1>{post.frontmatter.title}</h1>
-          </div>
-          {post.frontmatter.tags.map(tag => (
-            <Link
-              to={`/tags/${tag}/`}
-              key={tag}
-              className="tag mark rounded-full p-1"
-            >
-              {tag}
-            </Link>
-          ))}
-          <div className="markdown">
-            <h6>{parseDate(post.frontmatter.date)}</h6>
-            <MDXRenderer>{post.body}</MDXRenderer>
-          </div>
+        <div className="markdown markdown-content mt-4 mb-2">
+          <h1>{post.frontmatter.title}</h1>
+          <ul className="tags-list mark">
+            {post.frontmatter.tags.map(tag => (
+              <Link
+                to={`/tags/${tag}/`}
+                key={tag}
+                className="tag mark rounded-full p-1"
+              >
+                {tag}
+              </Link>
+            ))}
+          </ul>
+          <h6>{parseDate(post.frontmatter.date)}</h6>
+          <MDXRenderer>{post.body}</MDXRenderer>
         </div>
         <div className="info-nav in-row text-primary mb-2">
           {next && (
