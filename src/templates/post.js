@@ -25,10 +25,23 @@ export default function Template({ data, pageContext }) {
           className="cover-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
         />
-        <div className="markdown markdown-content mt-4 mb-2">
-          <h1>{post.frontmatter.title}</h1>
-          <h6>{parseDate(post.frontmatter.date)}</h6>
-          <MDXRenderer>{post.body}</MDXRenderer>
+        <div className="markdown-content mt-4 mb-2">
+          <div className="markdown">
+            <h1>{post.frontmatter.title}</h1>
+          </div>
+          {post.frontmatter.tags.map(tag => (
+            <Link
+              to={`/tags/${tag}/`}
+              key={tag}
+              className="tag mark rounded-full p-1"
+            >
+              {tag}
+            </Link>
+          ))}
+          <div className="markdown">
+            <h6>{parseDate(post.frontmatter.date)}</h6>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </div>
         </div>
         <div className="info-nav in-row text-primary mb-2">
           {next && (
@@ -66,6 +79,7 @@ export const postQuery = graphql`
       frontmatter {
         path
         title
+        tags
         date
         featuredImage {
           childImageSharp {
