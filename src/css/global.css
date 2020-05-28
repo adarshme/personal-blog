@@ -248,6 +248,10 @@ a {
   overflow: hidden;
 }
 
+.tag.mark {
+  background-color: var(--clr-secondary);
+}
+
 .tag:hover {
   transform: scale(1.1);
 }
