@@ -268,12 +268,20 @@ a {
   justify-content: center;
 }
 
+.tags-list.mark {
+  justify-content: flex-start;
+}
+
 .tag {
   background-color: var(--clr-primary);
   color: var(--text-primary);
   overflow: hidden;
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+.tag.mark {
+  background-color: var(--clr-secondary);
 }
 
 .tag:hover {

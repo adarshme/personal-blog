@@ -27,6 +27,17 @@ export default function Template({ data, pageContext }) {
         />
         <div className="markdown markdown-content mt-4 mb-2">
           <h1>{post.frontmatter.title}</h1>
+          <ul className="tags-list mark">
+            {post.frontmatter.tags.map(tag => (
+              <Link
+                to={`/tags/${tag}/`}
+                key={tag}
+                className="tag mark rounded-full p-1"
+              >
+                {tag}
+              </Link>
+            ))}
+          </ul>
           <h6>{parseDate(post.frontmatter.date)}</h6>
           <MDXRenderer>{post.body}</MDXRenderer>
         </div>
@@ -66,6 +77,7 @@ export const postQuery = graphql`
       frontmatter {
         path
         title
+        tags
         date
         featuredImage {
           childImageSharp {

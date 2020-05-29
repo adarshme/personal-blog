@@ -45,12 +45,12 @@
   @apply font-semibold;
 }
 
-.markdown a {
+.markdown a:not(.tag) {
   color: var(--text-blue-600);
   @apply font-semibold;
 }
 
-.markdown a:hover {
+.markdown a:hover:not(.tag) {
   @apply underline;
 }
 
@@ -105,7 +105,8 @@
 }
 
 .markdown ul {
-  @apply text-base pl-8 list-disc;
+  /* pl-8 */
+  @apply text-base list-disc;
 }
 
 .markdown ol {
