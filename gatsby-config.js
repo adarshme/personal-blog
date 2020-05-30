@@ -1,5 +1,5 @@
 module.exports = {
-  // pathPrefix: `/blog`,
+  pathPrefix: `/blog`,
   siteMetadata: {
     title: `Inferno's Blog`,
     siteUrl: `https://infernocoder11.github.io/blog`,
@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
+    // `gatsby-plugin-preact`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,7 +49,7 @@ module.exports = {
       resolve: "gatsby-plugin-use-dark-mode",
       options: {
         classNameDark: "dark-mode",
-        classNameLight: "",
+        classNameLight: "light-mode",
         storageKey: "dark-mode",
         // element: document,
         minify: true,
