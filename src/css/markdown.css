@@ -6,7 +6,7 @@
   --bg-gray-100: #f7fafc;
   --border-gray-300: #e2e8f0;
   --border-gray-600: #718096;
-  --text-blue-600: #3182ce;
+  --text-blue-600: #2d78bf;
 }
 
 .dark-mode {
@@ -16,7 +16,7 @@
   --bg-gray-100: #1a202c;
   --border-gray-300: #4a5568;
   --border-gray-600: #cbd5e0;
-  --text-blue-600: #0081cb;
+  --text-blue-600: #3ca4e0;
 }
 
 .py-05 {
