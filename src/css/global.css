@@ -21,7 +21,7 @@ a:hover {
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/moon.svg");
   --header-bg-color: #663399;
-  --text-blue: #3182ce;
+  --text-blue: #2876bf;
 }
 
 .dark-mode {
@@ -33,12 +33,12 @@ a:hover {
   --heart-color: #e53e3e;
   --dark-mode-status-svg: url("../images/sun.svg");
   --header-bg-color: #333333;
-  --text-blue: #0081cb;
+  --text-blue: #1992d8;
 }
 
-body {
+/* body {
   font-family: inter;
-}
+} */
 
 #gatsby-focus-wrapper {
   background-color: var(--clr-secondary);
