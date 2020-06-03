@@ -20,7 +20,7 @@ export default function Template({ data, pageContext }) {
     <>
       <SEO title={post.frontmatter.title} />
       <Header siteTitle={title} />
-      <div className="markdown-container">
+      <div className="markdown-container bg-color-sec">
         <Img
           className="cover-image"
           fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
