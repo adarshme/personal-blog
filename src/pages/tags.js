@@ -21,7 +21,7 @@ const TagsPage = ({
     <SEO title="Tags" />
     <div>
       <Header siteTitle={title} />
-      <div className="tags-container">
+      <div className="tags-container bg-color-sec">
         <ul className="tags-list">
           {group.map(tag => (
             <Link
