@@ -20,7 +20,7 @@ const Tags = ({ pageContext, data }) => {
   return (
     <>
       <SEO title={`Tag - ${tag}`} />
-      <div className="tag-blogs-container">
+      <div className="tag-blogs-container bg-color-sec">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           className="container-box"
