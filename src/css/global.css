@@ -44,6 +44,10 @@ a:hover {
   background-color: var(--clr-secondary);
 }
 
+.bg-color-pri {
+  background-color: var(--clr-primary);
+}
+
 .bg-color-sec {
   background-color: var(--clr-secondary);
 }
@@ -150,7 +154,6 @@ a {
 }
 
 .card-class {
-  background-color: var(--clr-primary);
   border-color: var(--clr-border);
 }
 
@@ -208,7 +211,6 @@ a {
   grid-area: content;
   padding-left: 50px;
   padding-right: 50px;
-  background-color: var(--clr-primary);
   @apply rounded-lg;
   @apply overflow-hidden;
   @apply shadow-lg;
@@ -273,7 +275,6 @@ a {
 }
 
 .tag {
-  background-color: var(--clr-primary);
   color: var(--text-primary);
   overflow: hidden;
   margin-right: 10px;
