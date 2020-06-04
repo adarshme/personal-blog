@@ -5,7 +5,7 @@ import { parseDate } from "../helpers"
 
 const Card = props => {
   return (
-    <div className="card-class border mt-1 mb-1 rounded-lg overflow-hidden shadow">
+    <div className="card-class border mt-1 mb-1 rounded-lg overflow-hidden shadow bg-color-pri">
       <Link
         to={props.to}
         style={{ display: "flex", flexDirection: "row", height: "100%" }}
