@@ -27,7 +27,7 @@ const TagsPage = ({
             <Link
               to={`/tags/${tag.fieldValue}/`}
               key={tag.fieldValue}
-              className="tag rounded-full p-1"
+              className="tag rounded-full p-1 bg-color-pri"
             >
               {tag.fieldValue}
             </Link>
