@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 // Utilities
 // import kebabCase from "lodash/kebabCase"
 // Components
-import SEO from "../components/seo"
-import { Link, graphql } from "gatsby"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import "../css/global.css"
+import SEO from "../components/seo";
+import { Link, graphql } from "gatsby";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import "../css/global.css";
 
 const TagsPage = ({
   data: {
@@ -23,7 +23,7 @@ const TagsPage = ({
       <Header siteTitle={title} />
       <div className="tags-container bg-color-sec">
         <ul className="tags-list">
-          {group.map(tag => (
+          {group.map((tag) => (
             <Link
               to={`/tags/${tag.fieldValue}/`}
               key={tag.fieldValue}
@@ -42,7 +42,7 @@ const TagsPage = ({
       </div>
     </div>
   </div>
-)
+);
 TagsPage.propTypes = {
   data: PropTypes.shape({
     allMdx: PropTypes.shape({
@@ -59,8 +59,8 @@ TagsPage.propTypes = {
       }),
     }),
   }),
-}
-export default TagsPage
+};
+export default TagsPage;
 export const pageQuery = graphql`
   query {
     site {
@@ -75,4 +75,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

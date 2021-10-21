@@ -1,9 +1,9 @@
-import React from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
-import { parseDate } from "../helpers"
+import React from "react";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
+import { parseDate } from "../helpers";
 
-const Card = props => {
+const Card = (props) => {
   return (
     <div className="card-class border mt-1 mb-1 rounded-lg overflow-hidden shadow bg-color-pri">
       <Link
@@ -24,7 +24,7 @@ const Card = props => {
         </div>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

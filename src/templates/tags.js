@@ -1,21 +1,21 @@
-import React from "react"
-import PropTypes from "prop-types"
-import SEO from "../components/seo"
+import React from "react";
+import PropTypes from "prop-types";
+import SEO from "../components/seo";
 
 // Components
-import { Link, graphql } from "gatsby"
-import Card from "../components/card"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import { Link, graphql } from "gatsby";
+import Card from "../components/card";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
-import "../css/global.css"
+import "../css/global.css";
 
 const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
-  const { edges, totalCount } = data.allMdx
+  const { tag } = pageContext;
+  const { edges, totalCount } = data.allMdx;
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? "" : "s"
-  } tagged with "${tag}"`
+  } tagged with "${tag}"`;
 
   return (
     <>
@@ -40,7 +40,7 @@ const Tags = ({ pageContext, data }) => {
                   image={node.frontmatter.thumbnail.childImageSharp.fluid}
                   date={node.frontmatter.date}
                 />
-              )
+              );
             })}
           </div>
         </div>
@@ -56,8 +56,8 @@ const Tags = ({ pageContext, data }) => {
         <Footer />
       </div>
     </>
-  )
-}
+  );
+};
 
 Tags.propTypes = {
   pageContext: PropTypes.shape({
@@ -78,9 +78,9 @@ Tags.propTypes = {
       ),
     }),
   }),
-}
+};
 
-export default Tags
+export default Tags;
 
 export const pageQuery = graphql`
   query($tag: String) {
@@ -114,4 +114,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

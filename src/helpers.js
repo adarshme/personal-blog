@@ -11,27 +11,27 @@ let months = [
   "October",
   "November",
   "December",
-]
+];
 
 export function parseDate(date) {
-  date = date.split("-")
-  let year = Number(date[0])
-  let month = months[Number(date[1]) - 1]
-  let day = Number(date[2])
-  return month + " " + day + " " + year
+  date = date.split("-");
+  let year = Number(date[0]);
+  let month = months[Number(date[1]) - 1];
+  let day = Number(date[2]);
+  return month + " " + day + " " + year;
 }
 
 export function toggleDarkMode() {
-  const body = document.body
+  const body = document.body;
   if (body.classList.toggle("dark-mode")) {
-    localStorage.setItem("dark-mode", true)
+    localStorage.setItem("dark-mode", true);
   } else {
-    localStorage.setItem("dark-mode", false)
+    localStorage.setItem("dark-mode", false);
   }
 }
 
 export function goBack() {
-  window.history.back()
+  window.history.back();
 }
 
 // if (typeof window !== `undefined`) {
