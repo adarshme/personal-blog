@@ -21,15 +21,15 @@
 // }
 
 export const onRouteUpdate = () => {
-  var posY = 0
-  const header = document.getElementById("site-header")
-  window.addEventListener("scroll", event => {
+  var posY = 0;
+  const header = document.getElementById("site-header");
+  window.addEventListener("scroll", (event) => {
     if (window.scrollY - posY > 76) {
-      header.classList.add("hide")
-      posY = window.scrollY
+      header.classList.add("hide");
+      posY = window.scrollY;
     } else if (window.scrollY - posY < 0) {
-      header.classList.remove("hide")
-      posY = window.scrollY
+      header.classList.remove("hide");
+      posY = window.scrollY;
     }
-  })
-}
+  });
+};

@@ -1,12 +1,12 @@
-import React from "react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql, Link } from "gatsby"
-import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import "../css/markdown.css"
-import Img from "gatsby-image"
-import { parseDate } from "../helpers"
+import React from "react";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import { graphql, Link } from "gatsby";
+import SEO from "../components/seo";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import "../css/markdown.css";
+import Img from "gatsby-image";
+import { parseDate } from "../helpers";
 
 export default function Template({ data, pageContext }) {
   const {
@@ -14,8 +14,8 @@ export default function Template({ data, pageContext }) {
     site: {
       siteMetadata: { title },
     },
-  } = data
-  const { next, prev } = pageContext
+  } = data;
+  const { next, prev } = pageContext;
   return (
     <>
       <SEO title={post.frontmatter.title} />
@@ -28,7 +28,7 @@ export default function Template({ data, pageContext }) {
         <div className="markdown markdown-content mt-4 mb-2 bg-color-pri">
           <h1>{post.frontmatter.title}</h1>
           <ul className="tags-list mark">
-            {post.frontmatter.tags.map(tag => (
+            {post.frontmatter.tags.map((tag) => (
               <Link
                 to={`/tags/${tag}/`}
                 key={tag}
@@ -62,7 +62,7 @@ export default function Template({ data, pageContext }) {
         <Footer />
       </div>
     </>
-  )
+  );
 }
 
 export const postQuery = graphql`
@@ -89,4 +89,4 @@ export const postQuery = graphql`
       }
     }
   }
-`
+`;

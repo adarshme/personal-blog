@@ -1,15 +1,15 @@
-import React from "react"
-import Layout from "../components/layout"
+import React from "react";
+import Layout from "../components/layout";
 //import Image from "../components/image"
-import SEO from "../components/seo"
-import { Link, graphql } from "gatsby"
-import Card from "../components/card"
+import SEO from "../components/seo";
+import { Link, graphql } from "gatsby";
+import Card from "../components/card";
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <div className="latestBlogPosts">
-      {data.allMdx.edges.map(post => (
+      {data.allMdx.edges.map((post) => (
         <Card
           key={post.node.id}
           to={post.node.frontmatter.path}
@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => (
       </Link>
     </div>
   </Layout>
-)
+);
 
 export const pageQuery = graphql`
   query IndexQuery {
@@ -53,6 +53,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default IndexPage
+export default IndexPage;

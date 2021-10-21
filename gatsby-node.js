@@ -6,13 +6,13 @@
 
 // You can delete this file if you're not using it
 
-const path = require("path")
+const path = require("path");
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
-  const postTemplate = path.resolve("src/templates/post.js")
-  const tagTemplate = path.resolve("src/templates/tags.js")
+  const postTemplate = path.resolve("src/templates/post.js");
+  const tagTemplate = path.resolve("src/templates/tags.js");
 
   return graphql(`
     {
@@ -41,11 +41,11 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(res => {
+  `).then((res) => {
     if (res.errors) {
-      return Promise.reject(res.errors)
+      return Promise.reject(res.errors);
     }
-    const posts = res.data.posts.edges
+    const posts = res.data.posts.edges;
     posts.forEach(({ node }, index) => {
       createPage({
         path: `${node.frontmatter.path}`,
@@ -54,16 +54,16 @@ exports.createPages = ({ actions, graphql }) => {
           prev: index === 0 ? null : posts[index - 1].node,
           next: index === posts.length - 1 ? null : posts[index + 1].node,
         },
-      })
-    })
-    res.data.tagsGroup.group.forEach(tag => {
+      });
+    });
+    res.data.tagsGroup.group.forEach((tag) => {
       createPage({
         path: `/tags/${tag.fieldValue}/`,
         component: tagTemplate,
         context: {
           tag: tag.fieldValue,
         },
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};
